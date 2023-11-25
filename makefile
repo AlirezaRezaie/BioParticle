@@ -16,8 +16,8 @@ SRCS = $(wildcard *.c)
 OBJS = $(SRCS:.c=.o)
 
 # Output executables
-TARGET = myprogram
-TARGET_DEBUG = myprogram-debug
+TARGET = program
+TARGET_DEBUG = program-debug
 
 all: $(TARGET)
 
