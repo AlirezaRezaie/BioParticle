@@ -1,0 +1,12 @@
+{
+  "editor.formatOnSave": true,
+
+  "files.associations": {
+    "*.ejs": "html",
+    "*.html": "html",
+    "sdl.h": "c",
+    "algorithm": "c",
+    "math.h": "c",
+    "stdlib.h": "c"
+  }
+}
