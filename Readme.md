@@ -6,10 +6,10 @@ implemented ( with the gravity formula f = G/d^2)
 - if G is positive it applys an **attraction**
 - if G is negetive it applys an **repulsion**
 
-<div style="display: flex;">
-    <img src="img/cell_like_creatures.png" alt="Image 1" style="width: 30%" >
-    <img src="img/space_ships.png" alt="Image 2" style="width: 30%">
-</div>
+<p float="left">
+  <img src="img/cell_like_creatures.png" alt="view of the web app" height="450" width="400"/>
+  <img src="img/space_ships.png"  width="300" />
+</p>
 
 ## how to build and run
 
