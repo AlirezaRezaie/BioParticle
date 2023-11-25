@@ -101,19 +101,19 @@ int main() {
       SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
 
   // create yellow particles
-  int numOfYellows = 500;
+  int numOfYellows = 900;
   SDL_Color colorYellow = {255, 255, 0, 2};
   Particle *yellowParticles = create_particles(numOfYellows, colorYellow);
   struct PSystem yellow = {yellowParticles, numOfYellows};
 
   // create red particles
-  int numOfReds = 500;
+  int numOfReds = 900;
   SDL_Color colorRed = {255, 0, 0, 2};
   Particle *redParticles = create_particles(numOfReds, colorRed);
   struct PSystem red = {redParticles, numOfReds};
 
   // create green particles
-  int numOfGreens = 500;
+  int numOfGreens = 900;
   SDL_Color colorGreen = {0, 255, 0, 2};
   Particle *greenParticles = create_particles(numOfGreens, colorGreen);
   struct PSystem green = {greenParticles, numOfGreens};
@@ -132,13 +132,23 @@ int main() {
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
 
-    rule(green, green, -0.32);
+
+    // this rules emerge cells
+    rule(red, red, 0.1);
+    rule(yellow, red, 0.15);
+    rule(green, green, -0.7);
+    rule(green, red, -0.2);
+    rule(red, green, -0.1);
+
+
+    // this rules emerges spaceships
+/*     rule(green, green, -0.32);
     rule(green, red, -0.17);
     rule(green, yellow, 0.34);
     rule(red, red, -0.10);
     rule(red, green, -0.34);
     rule(yellow, yellow, 0.15);
-    rule(yellow, green, -0.20);
+    rule(yellow, green, -0.20); */
 
     draw_particles(renderer, yellowParticles, numOfYellows);
     draw_particles(renderer, greenParticles, numOfGreens);
